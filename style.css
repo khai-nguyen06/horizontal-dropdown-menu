@@ -1,0 +1,66 @@
+/* 1. Reset CSS cơ bản và đặt font chữ chung */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    padding: 30px;
+    background-color: #f4f4f4;
+}
+
+/* 2. Định dạng khu vực chứa Menu chính (#menu) */
+#menu {
+    height: 40px;
+    background-color: #333333;
+    border-bottom: 2px solid #222222;
+}
+
+#menu ul {
+    list-style: none;
+}
+
+/* 3. Đặt các mục chọn menu cấp 1 nằm ngang bằng float: left */
+#menu > ul > li {
+    float: left;
+    position: relative; /* Giúp menu con định vị tương quan theo menu cha */
+}
+
+/* 4. Định dạng hiển thị cho các liên kết <a> */
+#menu a {
+    display: block;
+    width: 140px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 15px;
+    background-color: #333333;
+}
+
+/* 5. Chuyển màu nền liên kết sang màu đỏ khi hover vào */
+#menu a:hover {
+    background-color: #d32f2f;
+}
+
+/* 6. Định dạng cho danh sách menu con (quy định vị trí và ẩn mặc định) */
+#menu ul ul {
+    position: absolute;
+    top: 40px;  /* Đặt menu con ngay bên dưới thanh menu cha */
+    left: 0;
+    visibility: hidden; /* Mặc định ẩn menu con */
+    z-index: 1000;
+}
+
+/* Định dạng các mục li trong menu con nằm dọc */
+#menu ul ul li {
+    float: none;
+    border-bottom: 1px solid #444444;
+}
+
+/* 7. Hiển thị menu con khi di chuột (hover) vào mục chọn menu cha */
+#menu ul li:hover > ul {
+    visibility: visible;
+}
